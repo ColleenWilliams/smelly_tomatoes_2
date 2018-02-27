@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get "signup" => "users#new"
-  resource :session
-  resources :users
   root "movies#index"
+  resources :users
   resources :movies do
-    resources :reviews
+  resources :reviews
   end
-
+  devise_for :users
 end
