@@ -6,7 +6,8 @@
 <ol id="reviews">
   <% @reviews.each do |review| %>
   <li>
-    <%= mail_to(review.name, review.name) %>
+    <%@user = User.find(review.user_id)%>
+    User: <%= @user.first_name%>
   </li>
   <li>
     Comment: <%=review.comment%>

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users, only: [:show, :edit, :update]
   root "movies#index"
-  resources :users
   resources :movies do
   resources :reviews
   end
-  devise_for :users
+
 end
