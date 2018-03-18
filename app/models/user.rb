@@ -3,11 +3,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise  :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable,
-        :confirmable, :lockable, :timeoutable,
+        # :confirmable, 
+        :lockable, :timeoutable,
         :omniauthable, omniauth_providers: [:facebook, :github, :google_oauth2, :twitter]
 
   has_many :reviews
   has_many :movies, through: :reviews
+
 
   def self.create_from_provider_data(provider_data)
     where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do | user |
