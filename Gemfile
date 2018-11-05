@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'pry'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -61,15 +63,21 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 gem 'faraday'
 
+gem 'activerecord-session_store'
 # Use Devise for authentication
 gem 'devise', '~> 4.2'
-# Use Omniauth Facebook plugin
+
+# User Authentication with Facebook
 gem 'omniauth-facebook'
-# Use Omniauth Github plugin
-gem 'omniauth-github'
-# Use Omniauth Google plugin
-gem 'omniauth-google-oauth2', "~> 0.2.1"
-# Use Omniauth Twitter plugin
-gem 'omniauth-twitter'
-# Use ActiveRecord Sessions
-gem 'activerecord-session_store', '~> 1.0'
+# Development ENV Variables
+gem 'figaro'
+# # Use Omniauth Github plugin
+# gem 'omniauth-github'
+# # Use Omniauth Google plugin
+# gem 'omniauth-google-oauth2', "~> 0.2.1"
+# # Use Omniauth Twitter plugin
+# gem 'omniauth-twitter'
+# # Use ActiveRecord Sessions
+# gem 'activerecord-session_store', '~> 1.0'
+
+gem "rails-html-sanitizer", ">= 1.0.4"

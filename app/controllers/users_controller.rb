@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def show
   end
@@ -10,6 +10,10 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
+    def facebook
+      @user = User.from_omniauth(request.env["omniauth.auth"])
+      sign_in_and_redirect @user
+    end
 
   private
   def user_params
