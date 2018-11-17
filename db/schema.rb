@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20180925011409) do
     t.string   "cast"
     t.string   "duration"
     t.string   "image_file_name", default: ""
-    t.string   "avatars"
+    t.string   "avatar"
   end
 
   create_table "reviews", force: :cascade do |t|

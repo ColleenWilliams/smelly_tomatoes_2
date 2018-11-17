@@ -26,13 +26,9 @@
         <%= f.label :duration %>
         <%= f.text_field :duration, size: 10 %>
       </li>
-      <li class="required">
-        <%= f.label :image_file_name %>
-        <%= f.text_field :image_file_name %>
-      </li>
       <li class ="required">
-        <%= f.label :avatars %>
-        <%= f.file_field :avatars, multiple: true, size: "30"%>
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %>
       </li>
       <li>
         <%= f.label :cast %>

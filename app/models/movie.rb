@@ -12,7 +12,7 @@ class Movie < ApplicationRecord
   has_many :reviews, dependent: :destroy
   belongs_to :director
   mount_uploader :avatar, AvatarUploader
-  serialize :avatars, JSON
+  #serialize :avatars, JSON
 
   MOVIE_RATINGS= ["G", "PG", "PG-13", "R", "NC-17","NR"];
   LOW_GROSS = 300000;
