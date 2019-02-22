@@ -45,8 +45,11 @@ end
     redirect_to movies_url
   end
 
+  def popular
+    @movies = Movie.all.sort_by { |m| m.average_stars.to_f }.reverse[0..2]
+  end
 
-private
+  private
 
   def movie_params
     params.require(:movie).

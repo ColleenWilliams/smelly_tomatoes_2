@@ -13,8 +13,10 @@ Rails.application.routes.draw do
 
   # resources :users, only: [:show, :edit, :update]
   resources :movies do
-  resources :reviews
-  end
+  resources :reviews  end
 
+
+  get 'popular', to: 'movies#popular'
+  get 'privacypolicy', to: 'home#privacypolicy'
 
 end
