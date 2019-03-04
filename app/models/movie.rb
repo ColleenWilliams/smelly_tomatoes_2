@@ -47,6 +47,15 @@ class Movie < ApplicationRecord
     reviews.average(:stars)
   end
 
+  def self.popular
+   self.all.sort_by {|m| m.average_stars.to_f }.reverse[0..2]
+  end
+
+  def self.order_by_created_at
+    order("created_at DESC")
+  end
+
+
   def self.search(search)
      where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%")
   end

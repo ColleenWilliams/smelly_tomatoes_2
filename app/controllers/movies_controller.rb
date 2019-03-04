@@ -3,9 +3,9 @@ class MoviesController < ApplicationController
   def index
   @movies = Movie.all
   if params[:search]
-    @movies = Movie.search(params[:search]).order("created_at DESC")
+    @movies = Movie.search(params[:search]).order_by_created_at
   else
-    @movies = Movie.all.order("created_at DESC")
+    @movies = Movie.order_by_created_at
   end
 end
 
@@ -46,7 +46,7 @@ end
   end
 
   def popular
-    @movies = Movie.all.sort_by { |m| m.average_stars.to_f }.reverse[0..2]
+    @movies = Movie.popular
   end
 
   private
